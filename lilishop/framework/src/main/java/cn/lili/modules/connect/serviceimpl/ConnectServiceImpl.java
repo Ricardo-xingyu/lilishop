@@ -193,6 +193,8 @@ public class ConnectServiceImpl extends ServiceImpl<ConnectMapper, Connect> impl
      */
     public JSONObject getConnect(String code) {
         WechatConnectSettingItem setting = getWechatMPSetting();
+        System.out.println("appid="+setting.getAppId());
+        System.out.println("appSecret="+setting.getAppSecret());
         String url = "https://api.weixin.qq.com/sns/jscode2session?" +
                 "appid=" + setting.getAppId() + "&" +
                 "secret=" + setting.getAppSecret() + "&" +
