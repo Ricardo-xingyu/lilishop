@@ -308,7 +308,8 @@ public class ConnectServiceImpl extends ServiceImpl<ConnectMapper, Connect> impl
      */
     private WechatConnectSettingItem getWechatMPSetting() {
         Setting setting = settingService.get(SettingEnum.WECHAT_CONNECT.name());
-
+        System.out.println(SettingEnum.WECHAT_CONNECT.name());
+        System.out.println(setting.getSettingValue());
         WechatConnectSetting wechatConnectSetting = JSONUtil.toBean(setting.getSettingValue(), WechatConnectSetting.class);
 
         if (wechatConnectSetting == null) {
